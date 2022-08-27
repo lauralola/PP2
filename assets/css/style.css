@@ -1,0 +1,12 @@
+body{
+    background-image: url('../images/pexels-tima-miroshnichenko-6255349\ \(1\).jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+media queries phones
+body{
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
