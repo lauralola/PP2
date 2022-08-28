@@ -54,7 +54,7 @@ function runGame(){
     // let num6= Math.floor(Math.random()*12)+1;
     // let num7= Math.floor(Math.random()*12)+1;
     // let num8= Math.floor(Math.random()*12)+1;
-};
+}};
 
 function hitMe1(num1, num2){
     document.getElementsByClassName(num1).textContent = values[0]
@@ -85,4 +85,4 @@ function computerScore(){
 
 };
 
-function checkWinner()
+function checkWinner(){}
