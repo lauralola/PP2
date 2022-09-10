@@ -10,15 +10,17 @@ document.addEventListener("DOMContentLoaded", function(){
         button.addEventListener('click', function(){
             if (this.getAttribute('data-type') === 'hit'){
                 gamePlay();
-            } else {
-                alert('Hold')
+            } else if (this.getAttribute('data-type') === 'hold'){
+                alert('Hold');
                 endGame();
+            } else {
+                alert('Please Hit or Hold!');
             }
-        })
+        });
     }
 
     gamePlay();
-})
+});
 
 let player1=0;
 
@@ -28,35 +30,38 @@ function play1(){
 
     let num1 =  Math.floor(Math.random() * 12) +1; 
     player1 = player1 + num1;
+  	console.log(player1);
     return player1;
 }
     
 function play2(){
     let num2 =  Math.floor(Math.random() * 12) +1; 
     player2 = player2 + num2;
+  	console.log(player2);
     return player2;
 }
 
 function gamePlay(){
-    play1();
-    document.getElementsByClassName('player').textContent = player1;
+    playerScore = play1();
+    console.log(playerScore, playerScore)
+    document.getElementsByClassName('player')[0].innerText = String(playerScore);
     if (player2 <=19){
-        play2()} else {
-            alert('Computer Holds!')
-            play1();
+        play2();} else {
+            alert('Computer Holds!');
         }
 }
 
 function endGame(){
+    document.getElementsByClassName('computer').innerText = player2;
     if((player1 > 21) || (player2 > player1)){
         alert('Computer Wins!');
         incrementLoss();
     } else if (player1 > player2){
-        alert('You Win!')
+        alert('You Win!');
         incrementScore();
     } else {
-        alert('No Winner-Play Again!')
-        runGame();
+        alert('No Winner-Play Again!');
+        gamePlay();
     }
 }
 
@@ -69,14 +74,16 @@ function endGame(){
  * Gets score from DOM and adds 1
  */
 function incrementScore(){
+    console.log('score', score)
     let oldScore= parseInt(document.getElementById('score').innerText);
     document.getElementById('score').innerText = ++oldScore;
-};
+}
 
 /**
  * Gets loss from DOM and adds 1
  */
 function incrementLoss(){
+    console.log('score', score)
     let oldLoss= parseInt(document.getElementById('loss').innerText);
     document.getElementById('loss').innerText = ++oldLoss;
 }
