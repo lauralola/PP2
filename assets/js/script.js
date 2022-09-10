@@ -43,7 +43,7 @@ function play2(){
 
 function gamePlay(){
     playerScore = play1();
-    console.log(playerScore, playerScore)
+    console.log(playerScore, playerScore);
     document.getElementsByClassName('player')[0].innerText = String(playerScore);
     if (player2 <=19){
         play2();} else {
@@ -52,17 +52,27 @@ function gamePlay(){
 }
 
 function endGame(){
-    document.getElementsByClassName('computer').innerText = player2;
-    if((player1 > 21) || (player2 > player1)){
-        alert('Computer Wins!');
-        incrementLoss();
-    } else if (player1 > player2){
-        alert('You Win!');
-        incrementScore();
-    } else {
-        alert('No Winner-Play Again!');
-        gamePlay();
-    }
+    computerScore = play2();
+    document.getElementsByClassName('computer')[0].innerText = String(computerScore);
+    if (player1 > 21) {
+            alert('Computer Wins!');
+            incrementLoss();}
+        else if (player2 > 21) {
+            alert('You Win!');
+            incrementScore();} 
+        else if (player2 > player1){
+            alert('Computer Wins!');
+            incrementLoss();}
+        else if (player1 > player2){
+            alert('You Win!');
+            incrementScore();} 
+        else {
+            alert('No Winner-Play Again!');
+            player1=0
+            player2=0
+            document.getElementsByClassName('computer')[0].innerText = '?';
+            document.getElementsByClassName('player')[0].innerText = '0';
+            }
 }
 
 // function hold(){
@@ -77,6 +87,10 @@ function incrementScore(){
     console.log('score', score)
     let oldScore= parseInt(document.getElementById('score').innerText);
     document.getElementById('score').innerText = ++oldScore;
+    player1=0
+    player2=0
+    document.getElementsByClassName('computer')[0].innerText = '?';
+    document.getElementsByClassName('player')[0].innerText = '0';
 }
 
 /**
@@ -86,4 +100,8 @@ function incrementLoss(){
     console.log('score', score)
     let oldLoss= parseInt(document.getElementById('loss').innerText);
     document.getElementById('loss').innerText = ++oldLoss;
+    player1=0
+    player2=0
+    document.getElementsByClassName('computer')[0].innerText = '?';
+    document.getElementsByClassName('player')[0].innerText = '0';
 }
