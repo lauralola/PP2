@@ -58,9 +58,6 @@ function gamePlay(){
 
 // Displays computer game score at end of game and sets terms for winners and losers
 function endGame(){
-    let computerScore = play2();
-    console.log(document.getElementsByClassName('computer'));
-    document.getElementsByClassName('computer')[0].innerText = String(computerScore);
     if (player1>21 & player2>21){
         alert('No Winner. Play Again!');}
     else if(player1>21 & player2<22) {
@@ -77,6 +74,7 @@ function endGame(){
             incrementScore();} 
     else {  alert('No Winner-Play Again!');
             }
+    document.getElementsByClassName('computer')[0].innerText = String(player2);    
 }
 
 /**
@@ -86,16 +84,11 @@ function endGame(){
 
 function playerHold(){
     do {play2()} while (player2<19);
-        alert('Computer Holds!');
+        alert('Computer Holds')
         endGame();}
-    // else if (player2<19){
-    //     play2();
-    // } else{
-    //     alert('Computer Holds!');
-    //     endGame();
-    // }}
 
-//If computer is over 19 stops giving cards but continues to deal to player if pressing Hit Me.
+
+// If computer is over 19 stops giving cards but continues to deal to player if pressing Hit Me.
 function computerHold(){
     let buttons= document.getElementsByTagName('button');
 
@@ -111,8 +104,6 @@ function computerHold(){
  * Gets score from DOM and adds 1
  */
 function incrementScore(){
-  	let score;
-    console.log('score', score);
     let oldScore= parseInt(document.getElementById('score').innerText);
     document.getElementById('score').innerText = ++oldScore;}
 
@@ -120,8 +111,6 @@ function incrementScore(){
  * Gets loss from DOM and adds 1
  */
 function incrementLoss(){
-  	let score;
-    console.log('score', score);
     let oldLoss= parseInt(document.getElementById('loss').innerText);
     document.getElementById('loss').innerText = ++oldLoss;
 }

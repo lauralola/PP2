@@ -199,4 +199,4 @@ Laura Walsh 2022
 
     error with play2- should not be dealing once over 19 but once you hit hold button and then computer hold every time click an alert message card gets dealt to computer even after computer hold- why??
 
-    So I have clicked hold and click on computer holds alert- deals them a card so if should have won they dont. If computer holding and I continue to get cards then doesnt deal to computer. 
+    So I have clicked hold and click on computer holds alert- deals them a card so if should have won they dont. If computer holding and I continue to get cards then doesnt deal to computer. But if computer holding and I then click hold deals a final card to computer when computer hold alert pops up. 
