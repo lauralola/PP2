@@ -11,29 +11,29 @@ document.addEventListener("DOMContentLoaded", function(){
             if (this.getAttribute('data-type') === 'hit'){
                 gamePlay();
             } else if (this.getAttribute('data-type') === 'hold'){
-                alert('Hold');
-                endGame();
+                playerHold();}
+            else if (this.getAttribute('data-type') === 'reset'){
+                reset();
             } else {
                 alert('Please Hit or Hold!');
             }
         });
     }
-
-    gamePlay();
 });
 
 let player1=0;
 
 let player2=0;
 
+// Deals random numbers between 1 and 12 to player1 and returns to console
 function play1(){
-
     let num1 =  Math.floor(Math.random() * 12) +1; 
     player1 = player1 + num1;
   	console.log(player1);
     return player1;
 }
-    
+
+// Deals random numbers between 1 and 12 to player2 (computer) and returns to console
 function play2(){
     let num2 =  Math.floor(Math.random() * 12) +1; 
     player2 = player2 + num2;
@@ -41,67 +41,100 @@ function play2(){
     return player2;
 }
 
+/**
+ * *Displays the number's dealt to player 1 
+ * If computer score is less than 19 continues to deal to computer otherwise triggers computerHold function*/
+
 function gamePlay(){
-    playerScore = play1();
+    let playerScore = play1();
     console.log(playerScore, playerScore);
     document.getElementsByClassName('player')[0].innerText = String(playerScore);
-    if (player2 <=19){
+    if (player2 <19){
         play2();} else {
-            alert('Computer Holds!');
+            alert('Computer Holds!')
+            computerHold();
         }
 }
 
+// Displays computer game score at end of game and sets terms for winners and losers
 function endGame(){
-    computerScore = play2();
+    let computerScore = play2();
+    console.log(document.getElementsByClassName('computer'))
     document.getElementsByClassName('computer')[0].innerText = String(computerScore);
-    if (player1 > 21) {
+    if (player1>21 + player2>21){
+        alert('No Winner. Play Again!');
+        player1=0;
+        player2=0;
+        document.getElementsByClassName('computer')[0].innerText = '?';
+        document.getElementsByClassName('player')[0].innerText = '0';}
+    else if(player1 > 21) {
             alert('Computer Wins!');
             incrementLoss();}
-        else if (player2 > 21) {
+    else if (player2 > 21) {
             alert('You Win!');
             incrementScore();} 
-        else if (player2 > player1){
+    else if (player2 > player1){
             alert('Computer Wins!');
             incrementLoss();}
-        else if (player1 > player2){
+    else if (player1 > player2){
             alert('You Win!');
             incrementScore();} 
-        else {
-            alert('No Winner-Play Again!');
-            player1=0
-            player2=0
+    else {  alert('No Winner-Play Again!');
+            player1=0;
+            player2=0;
             document.getElementsByClassName('computer')[0].innerText = '?';
             document.getElementsByClassName('player')[0].innerText = '0';
             }
 }
 
-// function hold(){
-//     hold player card deal to computer if <19- how to bring this here from above fxn
-// };
+/**
+ * If player has pressed hold- continues to give computer cards if score less than 19
+ * Otherwise triggers endGame function
+ */
 
+function playerHold(){
+    while (player2 < 19){
+        play2();
+    }
+        alert('Computer Holds!');
+        endGame();
+    }
+
+//If computer is over 19 stops giving cards but continues to deal to player if pressing Hit Me.
+function computerHold(){
+
+    let buttons= document.getElementsByTagName('button');
+
+    for (let button of buttons){
+        button.addEventListener('click', function(){
+        if (this.getAttribute('data-type') === 'hit'){
+        play1();
+        } else {
+        endGame();
+        }})}}
 
 /**
  * Gets score from DOM and adds 1
  */
 function incrementScore(){
-    console.log('score', score)
+  	let score;
+    console.log('score', score);
     let oldScore= parseInt(document.getElementById('score').innerText);
-    document.getElementById('score').innerText = ++oldScore;
-    player1=0
-    player2=0
-    document.getElementsByClassName('computer')[0].innerText = '?';
-    document.getElementsByClassName('player')[0].innerText = '0';
-}
+    document.getElementById('score').innerText = ++oldScore;}
 
 /**
  * Gets loss from DOM and adds 1
  */
 function incrementLoss(){
-    console.log('score', score)
+  	let score;
+    console.log('score', score);
     let oldLoss= parseInt(document.getElementById('loss').innerText);
     document.getElementById('loss').innerText = ++oldLoss;
-    player1=0
-    player2=0
+}
+
+function reset(){
+    player1=0;
+    player2=0;
     document.getElementsByClassName('computer')[0].innerText = '?';
     document.getElementsByClassName('player')[0].innerText = '0';
 }
