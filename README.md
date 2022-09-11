@@ -32,7 +32,7 @@ Tha background and colour scheme was chosen to give the feeling and ambiance of 
 
 Icons from font awesome were also utilised to add some extra focus for clients. 
 
-The site is structured across three pages with navigtion settings on each. The homepage is the default loading page. The Shanti Yoga header can be clicked across any of the pages to return to the home page. 
+Upon opening the game an alert appears to explain the basic instructions for the game and how to play. This is short and concise so as to keep users engaged.
 
 ![Website](./assets/images/read-me-images/website.png)
 
@@ -41,79 +41,60 @@ The site is structured across three pages with navigtion settings on each. The h
 ## User Experience
 
 #### First Time Users
- The goal for first time users was for the purpose of the website to be easily understood. The user should be easily able to navigate through the site to find information on the services offered, teachers and location. It should be easy for the user to contact the studio with questions. The design should be inviting and uncluttered. 
+ The goal for first time users is for the game to be easily understood. The user should from opening of the site be able to read the short instructions and be able to play the game. The design is simple in structure so as not to have too many elements to confuse a first time user.  
 
- #### Studio Members
- Studio members should be able to easily stay up to date on class times and prices with our scheduling page and be able to contact the studio. 
+ #### Existing Users
+ Existing users should also be able to quickly and easily navigate the game to keep them engaged and interested in the product. 
 
-## Features
+## Features  
 
-#### Navigation Bar
-The navigation bar is present on all three pages of the site and provides an easy way for the user to move between the pages. Links to the Home page, Schedule section and a Contact page are consistent in position and style across the site. This allows th user to navigate across the page without using the back button. The menu highlights the page the user is currently on by displaying a line under this section for easy navigation.  
+#### Initial Game Alert 
+The inital alert is deigned to easily explain how the game is played. It is designed to upon loading of the page pop up to assist the user and can then be closed to procede with the game. The aim of the game is to beat the computer. The sum total of the players cards should stay below 21 but as close to 21 as possible. 
 
-![Navigation Bar](./assets/images/read-me-images/nav.png)
+![Initial Game Alert](./assets/images/read-me-images/nav.png)
 
-#### Main Page Image
+#### Computer area
+  
+The computer area displays a '?' for most of the game as the player is unable to see what numbers the computer is being dealt. Once the computer and the player both select to hold, the total sum of the computer cards is displayed. Once the reset button is selected, this area returns to displaying a '?'. On smaller screen sizes the display and font reduce in size, however the overall look appears the same as on larger devices. 
 
-The main image is designed to catch the eye and provide an image of how attending a class might feel. The color scheme is reflected across the site and some overlay text provides information on the location of the studio. 
+![Computer Area](./assets/images/read-me-images/nav.png)
 
-#### The Regular Practice Section
+#### Play area
 
-This section provides information on the services provided by the studio and the benefit of each. The user will have some basic information on the different options available to them and this may encourage the user to consider joining a class. This also contains links in each case to the relevant pages to access more information.
+The play area contains three buttons with different functions. Firstly the reset button resets the game so player and computer are both back to '0'.
 
-This is designed to change to column style display on smaller screens to maintain usability. 
+The hit button, when selected, will deal a card to the player and the computer (if the computer score is below 19). 
 
-![Practice Section](./assets/images/read-me-images/practice.png)
+The hold button, when selected by the player means no card is dealt to the player but the computer recieves cards if below 19. Once the computer score reaches 19 it will also display an alert that the computer holds and the game ends. The winner is then revealed.
 
-#### The Footer
+On larger screen sizes the buttons are displayed side by side horizontally but for smaller screen sizes they are stacked vertically for ease of use. 
 
-The footer includes social media links for the studio which open in a new tab. This allows the user to keep our webpage open when navigating away to our social media platforms. 
+![Play area](./assets/images/read-me-images/practice.png)
 
-![Footer](./assets/images/read-me-images/footer.png)
+#### Player area
 
-#### Schedule Section
+The player area again is kept simple in design. It initially displays a '0' and each time the player selects hit and a card is dealt the total score for the player is displayed for them. This should help them decide if they want another card to add to this or to hold their score. Once the reset button is selected, this area returns to displaying a '0'. On smaller screen sizes the display and font reduce in size, however the overall look appears the same as on larger devices. 
 
-Our timetable section provides information on regular classes so users are aware of when they may attend these. They can easily identify different services and their availability in the studio. A background image of a lady in a yoga pose in the forest is applied to add to the sense of quiet and space on the page.
+![Player Area](./assets/images/read-me-images/footer.png)
 
-Again the display style of this will vary between screen sizes for ease of use. On larger devices the full screen table display will be available and this will be simplified to an easy to read section for smaller devices. 
+#### Score Area 
 
-A separate section is provided with information on the various memeberships and costs for classes. This provides information to the user on different packages available to them. 
+The score area records the winners and losers of the games overall. Every time the computer wins a game the computer score increases by one and the same for player score. 
 
-![Schedule Section](./assets/images/read-me-images/table.png)
-
-#### Teacher Section
-
-This section provides users with information on the teachers, classes they are involved with and their experience and style. A photo of each teacher is also included so that students have an image of the teacher before attending classes. This is designed to help students decide on a class which may suit them and their needs. 
-
-This section is designed to change to a column style display on smaller screens to maintain usability. 
-
-![Schedule Section](./assets/images/read-me-images/teachers.png)
-
-#### Contact Page
-
-This page allows the user to send a message to the studio to ask for more informtation on a service or to book a service. There is also an option to sign up to an email list for free weekly online meditation. The user is asked to provide their name and email address and these must be inputted for the form to be accepted. 
-
-![Contact Page](./assets/images/read-me-images/contact.png)
-
-A google map is imbedded along with address and phone information to assist users in finding the studio. 
-![Map](./assets/images/read-me-images/map.png)
-
-On successful completion of the form a response page with a link back to our main page is provided. 
-![Response](./assets/images/read-me-images/thanks.png)
-
-[Back to top](#contents)
+![Score Area](./assets/images/read-me-images/table.png)
 
 ## Features left to implement
 
-A section to allow students to book into classes could be a potential future feature for the project. Within the timeframe provided this was not possible. 
+Additional features could be to build out the game to include a suit of cards. Currently the player recieves a random number between 1 and 12. This could be expanded to include a deck of cards.
 
-A section for members to leave reviews and feedback for teachers could also be a future feature. 
+The current layout with three potential card areas for both the player and computer could be modified so that individual cards are dealt and held in each separate div. 
 
 [Back to top](#contents)
 
 ## Technologies Used
 * HTML5 
 * CSS
+* JavaScript
 * Gitpod
 * GitHub
 * Google Fonts
@@ -124,15 +105,13 @@ A section for members to leave reviews and feedback for teachers could also be a
 
 This page was tested in different browsers including Safari and Chrome with the full site and links tested across the different platforms. It was tested across several devices including a laptop, iPad and iPhone. 
 
-All links were tested to ensure functionality. Responsiveness was tested and edited using DevTools and then media queries. Responsive design was checked with the 'Am I Responsive' site. 
+All buttons were tested to ensure functionality. The game was run several times to ensure accuracy of functions. Responsiveness was tested and edited using DevTools and then media queries. Responsive design was checked with the 'Am I Responsive' site. 
 
 ![Am I Responsive Result](./assets/images/read-me-images/responsive-design.png)
 
 The colour scheme used was identified to be easy to read with contrasting colours and this was tested along with general accessibilty results using the Lighthouse feature on Google Dev Tools. 
 
 ![Accessibility](./assets/images/read-me-images/lighthouse.png)
-
-The contact form was tested to ensure that all details must be completed before the form will be accepted and that on submit the form is submitted and the response page to this is provided to the user. 
 
 [Back to top](#contents)
 
@@ -147,14 +126,14 @@ No errors were found when passing through the official (Jigsaw) validator
 
 ![CSS testing](./assets/images/read-me-images/css.png)
 
+JavaScript
+No errors were found when passing through the official  validator
+
 
 [Back to top](#contents)
 
 ## Bugs
 Through the course of the project several issues were identified and recitified. 
-
-* Initially issues with background images were identified with the image being greatly magnified and only a small section displaying on the screen. After research online a solution was identified and ammended with the aid of AndrewL64 on stackoverflow. 
-(https://stackoverflow.com/questions/29463586/why-is-my-container-background-image-so-zoomed-in)
 
 * Font awesome icons were not displaying initially, however it soon came to attention that the style link to this had an error within. 
 
@@ -217,3 +196,7 @@ Laura Walsh 2022
 
     why is text inner not pulling to html- returning global variable not returned value
     issue with score originally had if((player1 > 21) || (player2 > player1), however did not realise this would include if computer over 21 so changed to if((player1 > 21) || ((player2 <21) +++ (player2 > player1)). 
+
+    error with play2- should not be dealing once over 19 but once you hit hold button and then computer hold every time click an alert message card gets dealt to computer even after computer hold- why??
+
+    So I have clicked hold and click on computer holds alert- deals them a card so if should have won they dont. If computer holding and I continue to get cards then doesnt deal to computer. 

@@ -49,9 +49,9 @@ function gamePlay(){
     let playerScore = play1();
     console.log(playerScore, playerScore);
     document.getElementsByClassName('player')[0].innerText = String(playerScore);
-    if (player2 <19){
+    if (player2<19){
         play2();} else {
-            alert('Computer Holds!')
+            alert('Computer Holds!');
             computerHold();
         }
 }
@@ -59,31 +59,23 @@ function gamePlay(){
 // Displays computer game score at end of game and sets terms for winners and losers
 function endGame(){
     let computerScore = play2();
-    console.log(document.getElementsByClassName('computer'))
+    console.log(document.getElementsByClassName('computer'));
     document.getElementsByClassName('computer')[0].innerText = String(computerScore);
-    if (player1>21 + player2>21){
-        alert('No Winner. Play Again!');
-        player1=0;
-        player2=0;
-        document.getElementsByClassName('computer')[0].innerText = '?';
-        document.getElementsByClassName('player')[0].innerText = '0';}
-    else if(player1 > 21) {
+    if (player1>21 & player2>21){
+        alert('No Winner. Play Again!');}
+    else if(player1>21 & player2<22) {
             alert('Computer Wins!');
             incrementLoss();}
-    else if (player2 > 21) {
+    else if (player2>21 & player1<22) {
             alert('You Win!');
             incrementScore();} 
-    else if (player2 > player1){
+    else if (player2<22 & player2>player1){
             alert('Computer Wins!');
             incrementLoss();}
-    else if (player1 > player2){
+    else if (player1<22 & player1>player2){
             alert('You Win!');
             incrementScore();} 
     else {  alert('No Winner-Play Again!');
-            player1=0;
-            player2=0;
-            document.getElementsByClassName('computer')[0].innerText = '?';
-            document.getElementsByClassName('player')[0].innerText = '0';
             }
 }
 
@@ -93,25 +85,27 @@ function endGame(){
  */
 
 function playerHold(){
-    while (player2 < 19){
-        play2();
-    }
+    do {play2()} while (player2<19);
         alert('Computer Holds!');
-        endGame();
-    }
+        endGame();}
+    // else if (player2<19){
+    //     play2();
+    // } else{
+    //     alert('Computer Holds!');
+    //     endGame();
+    // }}
 
 //If computer is over 19 stops giving cards but continues to deal to player if pressing Hit Me.
 function computerHold(){
-
     let buttons= document.getElementsByTagName('button');
 
     for (let button of buttons){
         button.addEventListener('click', function(){
         if (this.getAttribute('data-type') === 'hit'){
-        play1();
-        } else {
-        endGame();
-        }})}}
+            play1();
+            } else {
+            endGame();
+            }});}}
 
 /**
  * Gets score from DOM and adds 1
