@@ -12,6 +12,7 @@ body {
 .logo {
     background-color: silver;
     height: 60px;
+    width: 60px;
 }
 
 h1 {
@@ -68,7 +69,7 @@ h1 {
     
     .cards>div {
         padding-top: 20px;
-        height: 200px;
+        height: 220px;
     }
 }
 

@@ -4,7 +4,7 @@ The purpose of this project is to provide a simple, easy to use card style game 
 
 A simple and eye catching design that does not distract from the overall game and that will work across various screen sizes was required. This aims to attract more users and also to make it easier for current uses to enjoy the game. 
 
-[View the live project here](https://lauralola.github.io/PP1/index.html) 
+[View the live project here](https://lauralola.github.io/PP2/) 
 
 ## Contents
 
