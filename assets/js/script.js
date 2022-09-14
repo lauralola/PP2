@@ -84,12 +84,12 @@ function endGame(){
  * Otherwise triggers endGame function
  */
 
-function playerHold(){
+ function playerHold(){
     console.log("playerHold func");
     do {play2();} while (player2<17);
-        endGame();
-        alert('Computer Holds');
-}
+    if (player2>17){
+        computerHold();}      
+};
 
 
 // If computer is over 17 stops giving cards but continues to deal to player if pressing Hit Me.
