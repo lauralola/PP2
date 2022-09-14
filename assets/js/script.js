@@ -43,33 +43,33 @@ function play2(){
 
 /**
  * *Displays the number's dealt to player 1 
- * If computer score is less than 19 continues to deal to computer otherwise triggers computerHold function*/
+ * If computer score is less than 17 continues to deal to computer otherwise triggers computerHold function*/
 
 function gamePlay(){
     let playerScore = play1();
     console.log(playerScore, playerScore);
     document.getElementsByClassName('player')[0].innerText = String(playerScore);
-    if (player2<19){
+    if (player2<17){
         play2();} else {
-            alert('Computer Holds!');
             computerHold();
+            alert('Computer Holds!');
         }
 }
 
 // Displays computer game score at end of game and sets terms for winners and losers
 function endGame(){
-    if (player1>21 & player2>21){
+    if (player1>21 && player2>21){
         alert('No Winner. Play Again!');}
-    else if(player1>21 & player2<22) {
+    else if(player1>21 && player2<22) {
             alert('Computer Wins!');
             incrementLoss();}
-    else if (player2>21 & player1<22) {
+    else if (player2>21 && player1<22) {
             alert('You Win!');
             incrementScore();} 
-    else if (player2<22 & player2>player1){
+    else if (player2<22 && player2>player1){
             alert('Computer Wins!');
             incrementLoss();}
-    else if (player1<22 & player1>player2){
+    else if (player1<22 && player1>player2){
             alert('You Win!');
             incrementScore();} 
     else {  alert('No Winner-Play Again!');
@@ -78,17 +78,18 @@ function endGame(){
 }
 
 /**
- * If player has pressed hold- continues to give computer cards if score less than 19
+ * If player has pressed hold- continues to give computer cards if score less than 17
  * Otherwise triggers endGame function
  */
 
 function playerHold(){
-    do {play2()} while (player2<19);
-        alert('Computer Holds')
-        endGame();}
+    do {play2();} while (player2<17);
+        endGame();
+        alert('Computer Holds');
+}
 
 
-// If computer is over 19 stops giving cards but continues to deal to player if pressing Hit Me.
+// If computer is over 17 stops giving cards but continues to deal to player if pressing Hit Me.
 function computerHold(){
     let buttons= document.getElementsByTagName('button');
 
