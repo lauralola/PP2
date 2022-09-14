@@ -3,23 +3,23 @@
 
 document.addEventListener("DOMContentLoaded", function(){
     alert('Welcome to 21. The aim of the game is to beat the computer. Choose to hit or hold wisely. Your aim is for the sum total of your cards to stay below 21 but as close to 21 as possible. When you choose hit, a card will be dealt to you. When you chose hold no card is dealt. When both player and computer select hold the game ends and cards and winner is revealed. Good luck!');
-    
-    let buttons= document.getElementsByTagName('button');
+});
 
-    for (let button of buttons){
-        button.addEventListener('click', function(){
-            if (this.getAttribute('data-type') === 'hit'){
-                gamePlay();
-            } else if (this.getAttribute('data-type') === 'hold'){
-                playerHold();}
-            else if (this.getAttribute('data-type') === 'reset'){
-                reset();
-            } else {
-                alert('Please Hit or Hold!');
+let buttons= document.getElementsByTagName('button');
+
+for (let button of buttons){
+    button.addEventListener('click', function(){
+        if (this.getAttribute('data-type') === 'hit'){
+            gamePlay();
+        } else if (this.getAttribute('data-type') === 'hold'){
+            playerHold();}
+        else if (this.getAttribute('data-type') === 'reset'){
+            reset();
+        } else {
+             alert('Please Hit or Hold!');
             }
         });
     }
-});
 
 let player1=0;
 
@@ -46,6 +46,7 @@ function play2(){
  * If computer score is less than 17 continues to deal to computer otherwise triggers computerHold function*/
 
 function gamePlay(){
+    console.log("gamePlay func");
     let playerScore = play1();
     console.log(playerScore, playerScore);
     document.getElementsByClassName('player')[0].innerText = String(playerScore);
@@ -54,11 +55,11 @@ function gamePlay(){
             computerHold();
             alert('Computer Holds!');
         }
-        console.log("gamePlay func");
 }
 
 // Displays computer game score at end of game and sets terms for winners and losers
 function endGame(){
+    console.log("endGame func");   
     if (player1>21 && player2>21){
         alert('No Winner. Play Again!');}
     else if(player1>21 && player2<22) {
@@ -75,8 +76,7 @@ function endGame(){
             incrementScore();} 
     else {  alert('No Winner-Play Again!');
             }
-    document.getElementsByClassName('computer')[0].innerText = String(player2);
-    console.log("endGame func");    
+    document.getElementsByClassName('computer')[0].innerText = String(player2); 
 }
 
 /**
@@ -85,15 +85,16 @@ function endGame(){
  */
 
 function playerHold(){
+    console.log("playerHold func");
     do {play2();} while (player2<17);
         endGame();
         alert('Computer Holds');
-    console.log("playerHold func");
 }
 
 
 // If computer is over 17 stops giving cards but continues to deal to player if pressing Hit Me.
 function computerHold(){
+    console.log("computerHold func");
     let buttons= document.getElementsByTagName('button');
 
     for (let button of buttons){
@@ -110,31 +111,29 @@ function computerHold(){
             });
     
      }
-    
-     console.log("playerHold func");
     }
 /**
  * Gets score from DOM and adds 1
  */
 function incrementScore(){
+    console.log("incrementScore func");
     let oldScore= parseInt(document.getElementById('score').innerText);
     document.getElementById('score').innerText = ++oldScore;
-    console.log("incrementScore func");
 }
 
 /**
  * Gets loss from DOM and adds 1
  */
 function incrementLoss(){
+    console.log("incrementLoss func");
     let oldLoss= parseInt(document.getElementById('loss').innerText);
     document.getElementById('loss').innerText = ++oldLoss;
-    console.log("incrementLoss func");
 }
 
 function reset(){
+    console.log("reset func");
     player1=0;
     player2=0;
     document.getElementsByClassName('computer')[0].innerText = '?';
     document.getElementsByClassName('player')[0].innerText = '0';
-    console.log("reset func");
 }
