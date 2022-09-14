@@ -29,7 +29,7 @@ let player2=0;
 function play1(){
     let num1 =  Math.floor(Math.random() * 12) +1; 
     player1 = player1 + num1;
-  	console.log(player1);
+    console.log("funct: play1, player1", player1);
     return player1;
 }
 
@@ -37,7 +37,7 @@ function play1(){
 function play2(){
     let num2 =  Math.floor(Math.random() * 12) +1; 
     player2 = player2 + num2;
-  	console.log(player2);
+  	console.log("funct: play2, player2",player2);
     return player2;
 }
 
@@ -54,6 +54,7 @@ function gamePlay(){
             computerHold();
             alert('Computer Holds!');
         }
+        console.log("gamePlay func");
 }
 
 // Displays computer game score at end of game and sets terms for winners and losers
@@ -74,7 +75,8 @@ function endGame(){
             incrementScore();} 
     else {  alert('No Winner-Play Again!');
             }
-    document.getElementsByClassName('computer')[0].innerText = String(player2);    
+    document.getElementsByClassName('computer')[0].innerText = String(player2);
+    console.log("endGame func");    
 }
 
 /**
@@ -86,6 +88,7 @@ function playerHold(){
     do {play2();} while (player2<17);
         endGame();
         alert('Computer Holds');
+    console.log("playerHold func");
 }
 
 
@@ -95,18 +98,29 @@ function computerHold(){
 
     for (let button of buttons){
         button.addEventListener('click', function(){
-        if (this.getAttribute('data-type') === 'hit'){
-            play1();
+            if (this.getAttribute('data-type') === 'hit'){
+                play1();
+            } else if (this.getAttribute('data-type') === 'hold'){
+                endGame();}
+            else if (this.getAttribute('data-type') === 'reset'){
+                    reset();
             } else {
-            endGame();
-            }});}}
-
+                alert('Please Hit or Hold!');
+                }
+            });
+    
+     }
+    
+     console.log("playerHold func");
+    }
 /**
  * Gets score from DOM and adds 1
  */
 function incrementScore(){
     let oldScore= parseInt(document.getElementById('score').innerText);
-    document.getElementById('score').innerText = ++oldScore;}
+    document.getElementById('score').innerText = ++oldScore;
+    console.log("incrementScore func");
+}
 
 /**
  * Gets loss from DOM and adds 1
@@ -114,6 +128,7 @@ function incrementScore(){
 function incrementLoss(){
     let oldLoss= parseInt(document.getElementById('loss').innerText);
     document.getElementById('loss').innerText = ++oldLoss;
+    console.log("incrementLoss func");
 }
 
 function reset(){
@@ -121,4 +136,5 @@ function reset(){
     player2=0;
     document.getElementsByClassName('computer')[0].innerText = '?';
     document.getElementsByClassName('player')[0].innerText = '0';
+    console.log("reset func");
 }
