@@ -52,8 +52,8 @@ function gamePlay(){
     document.getElementsByClassName('player')[0].innerText = String(playerScore);
     if (player2<17){
         play2();} else {
-            computerHold();
             alert('Computer Holds!');
+            computerHold();
         }
 }
 
@@ -97,13 +97,12 @@ function playerHold(){
 
 // If computer is over 17 stops giving cards but continues to deal to player if pressing Hit Me.
 function computerHold(){
-    if (player1 > 24){
-        alert('You"ve gone too high')
-        endGame();
-    } else {
-        play1();
-    };
-}
+    let playerScore = play1();
+    if (player1 <= 21){
+        document.getElementsByClassName('player')[0].innerText = String(playerScore);}
+    else if (player1 > 22){
+        alert('You"ve gone too high');
+        endGame();}}
 
 /**
  * Gets score from DOM and adds 1
