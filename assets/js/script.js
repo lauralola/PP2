@@ -2,24 +2,24 @@
 // Listen for button clicks with event listerers
 
 document.addEventListener("DOMContentLoaded", function(){
-    alert('Welcome to 21. The aim of the game is to beat the computer. Choose to hit or hold wisely. Your aim is for the sum total of your cards to stay below 21 but as close to 21 as possible. When you choose hit, a card will be dealt to you. When you chose hold no card is dealt. When both player and computer select hold the game ends and cards and winner is revealed. Good luck!');
-});
+    alert('Welcome to 21. The aim of the game is to beat the computer. Choose to hit or hold wisely. Your aim is for the sum total of your cards to stay below 21 but as close to 21 as possible. When you choose hit, a card will be dealt to you. When you chose hold no card is dealt. Please click hold again if no response as computer waits for confirmation. When both player and computer select hold the game ends and cards and winner is revealed. Good luck!');
+    
+    let buttons= document.getElementsByTagName('button');
 
-let buttons= document.getElementsByTagName('button');
-
-for (let button of buttons){
-    button.addEventListener('click', function(){
-        if (this.getAttribute('data-type') === 'hit'){
-            gamePlay();
-        } else if (this.getAttribute('data-type') === 'hold'){
-            playerHold();}
-        else if (this.getAttribute('data-type') === 'reset'){
-            reset();
-        } else {
-             alert('Please Hit or Hold!');
+    for (let button of buttons){
+        button.addEventListener('click', function(){
+            if (this.getAttribute('data-type') === 'hit'){
+                gamePlay();
+            } else if (this.getAttribute('data-type') === 'hold'){
+                playerHold();}
+            else if (this.getAttribute('data-type') === 'reset'){
+                reset();
+            } else {
+                alert('Please Hit or Hold!');
             }
         });
     }
+});
 
 let player1=0;
 
@@ -37,7 +37,7 @@ function play1(){
 function play2(){
     let num2 =  Math.floor(Math.random() * 12) +1; 
     player2 = player2 + num2;
-  	console.log("funct: play2, player2",player2);
+    console.log("funct: play2, player2",player2);
     return player2;
 }
 
@@ -59,7 +59,7 @@ function gamePlay(){
 
 // Displays computer game score at end of game and sets terms for winners and losers
 function endGame(){
-    console.log("endGame func");   
+    console.log("endGame func");  
     if (player1>21 && player2>21){
         alert('No Winner. Play Again!');}
     else if(player1>21 && player2<22) {
@@ -76,7 +76,7 @@ function endGame(){
             incrementScore();} 
     else {  alert('No Winner-Play Again!');
             }
-    document.getElementsByClassName('computer')[0].innerText = String(player2); 
+    document.getElementsByClassName('computer')[0].innerText = String(player2);    
 }
 
 /**
@@ -84,42 +84,34 @@ function endGame(){
  * Otherwise triggers endGame function
  */
 
- function playerHold(){
+function playerHold(){
     console.log("playerHold func");
-    do {play2();} while (player2<17);
-    if (player2>17){
-        computerHold();}      
-};
+    if (player2>=17){
+        endGame();}  
+    if (player2<=17) {play2();};
+        // endGame();   
+        //     do {play2();} while (player2<17)
+        // endGame();   
+}
 
 
 // If computer is over 17 stops giving cards but continues to deal to player if pressing Hit Me.
 function computerHold(){
-    console.log("computerHold func");
-    let buttons= document.getElementsByTagName('button');
+    if (player1 > 24){
+        alert('You"ve gone too high')
+        endGame();
+    } else {
+        play1();
+    };
+}
 
-    for (let button of buttons){
-        button.addEventListener('click', function(){
-            if (this.getAttribute('data-type') === 'hit'){
-                play1();
-            } else if (this.getAttribute('data-type') === 'hold'){
-                endGame();}
-            else if (this.getAttribute('data-type') === 'reset'){
-                    reset();
-            } else {
-                alert('Please Hit or Hold!');
-                }
-            });
-    
-     }
-    }
 /**
  * Gets score from DOM and adds 1
  */
 function incrementScore(){
     console.log("incrementScore func");
     let oldScore= parseInt(document.getElementById('score').innerText);
-    document.getElementById('score').innerText = ++oldScore;
-}
+    document.getElementById('score').innerText = ++oldScore;}
 
 /**
  * Gets loss from DOM and adds 1
@@ -130,6 +122,7 @@ function incrementLoss(){
     document.getElementById('loss').innerText = ++oldLoss;
 }
 
+// Resets game back to 0 for player and computer
 function reset(){
     console.log("reset func");
     player1=0;
