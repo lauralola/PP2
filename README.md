@@ -34,7 +34,7 @@ Icons from font awesome were also utilised to add some extra focus for clients.
 
 Upon opening the game an alert appears to explain the basic instructions for the game and how to play. This is short and concise so as to keep users engaged.
 
-![Website](./assets/images/read-me-images/website.png)
+![Website](./assets/images/readme-images/responsive.png)
 
 [Back to top](#contents)
 
@@ -51,13 +51,13 @@ Upon opening the game an alert appears to explain the basic instructions for the
 #### Initial Game Alert 
 The inital alert is deigned to easily explain how the game is played. It is designed to upon loading of the page pop up to assist the user and can then be closed to procede with the game. The aim of the game is to beat the computer. The sum total of the players cards should stay below 21 but as close to 21 as possible. 
 
-![Initial Game Alert](./assets/images/read-me-images/nav.png)
+![Initial Game Alert](./assets/images/readme-images/alert.png)
 
 #### Computer area
   
 The computer area displays a '?' for most of the game as the player is unable to see what numbers the computer is being dealt. Once the computer and the player both select to hold, the total sum of the computer cards is displayed. Once the reset button is selected, this area returns to displaying a '?'. On smaller screen sizes the display and font reduce in size, however the overall look appears the same as on larger devices. 
 
-![Computer Area](./assets/images/read-me-images/nav.png)
+![Computer Area](./assets/images/readme-images/card-area.png)
 
 #### Play area
 
@@ -69,19 +69,19 @@ The hold button, when selected by the player means no card is dealt to the playe
 
 On larger screen sizes the buttons are displayed side by side horizontally but for smaller screen sizes they are stacked vertically for ease of use. 
 
-![Play area](./assets/images/read-me-images/practice.png)
+![Play area](./assets/images/readme-images/play-area.png)
 
 #### Player area
 
 The player area again is kept simple in design. It initially displays a '0' and each time the player selects hit and a card is dealt the total score for the player is displayed for them. This should help them decide if they want another card to add to this or to hold their score. Once the reset button is selected, this area returns to displaying a '0'. On smaller screen sizes the display and font reduce in size, however the overall look appears the same as on larger devices. 
 
-![Player Area](./assets/images/read-me-images/footer.png)
+![Player Area](./assets/images/readme-images/phone.png)
 
 #### Score Area 
 
 The score area records the winners and losers of the games overall. Every time the computer wins a game the computer score increases by one and the same for player score. 
 
-![Score Area](./assets/images/read-me-images/table.png)
+![Score Area](./assets/images/readme-images/score-area.png)
 
 ## Features left to implement
 
@@ -107,11 +107,11 @@ This page was tested in different browsers including Safari and Chrome with the 
 
 All buttons were tested to ensure functionality. The game was run several times to ensure accuracy of functions. Responsiveness was tested and edited using DevTools and then media queries. Responsive design was checked with the 'Am I Responsive' site. 
 
-![Am I Responsive Result](./assets/images/read-me-images/responsive-design.png)
+![Am I Responsive Result](./assets/images/readme-images/responsive.png)
 
 The colour scheme used was identified to be easy to read with contrasting colours and this was tested along with general accessibilty results using the Lighthouse feature on Google Dev Tools. 
 
-![Accessibility](./assets/images/read-me-images/lighthouse.png)
+![Accessibility](./assets/images/readme-images/lighthouse.png)
 
 [Back to top](#contents)
 
@@ -119,16 +119,15 @@ The colour scheme used was identified to be easy to read with contrasting colour
 HTML
 No errors were returned when passing through the official W3C validator
 
-![HTML testing](./assets/images/read-me-images/html.png)
+![HTML testing](./assets/images/readme-images/html.png)
 
 CSS
 No errors were found when passing through the official (Jigsaw) validator
 
-![CSS testing](./assets/images/read-me-images/css.png)
+![CSS testing](./assets/images/readme-images/css.png)
 
 JavaScript
-No errors were found when passing through the official  validator
-
+No errors were found when passing through the official Jshint validator
 
 [Back to top](#contents)
 
@@ -150,41 +149,11 @@ Through the course of the project several issues were identified and recitified.
 * An issue with the image loading times reducing performance was identified on Lighthouse testing. Images were compressed using tinyPNG and birme.net and this has improved performance. 
 
 * Several aria-labels were initally missing for links and images. This was flagged after revisiting some of the HTML lessons. 
- 
-
-[Back to top](#contents)
-
-## Deployment
-
-The site was deployed using GitHub pages. This was performed by navigating to the settings page within the repository. The pages tab on the menu to the left of the screen was opened and the source drop-down menu was changed to main. This generated a link to the site after a few minutes. 
-
-[Back to top](#contents)
-
-## Credits
-
-The love running project was used as a guide for setting the main page image, header and navigation. 
-
-Issue with image display settings rectified by modifying code accessed at stackoverflow. (https://stackoverflow.com/questions/29463586/why-is-my-container-background-image-so-zoomed-in)
-
-[Back to top](#contents)
-
-## Content
-Images were accessed from Pexels (https://www.pexels.com). 
-
-Icons for the practice section and footer were accessed at Font Awesome.
-
-Fonts were accessed from Google Fonts. 
-
-The map was generated and imbedded using Google Maps
-
-Laura Walsh 2022
 
 
 
 
-
-
-
+JS hint errors??
 
     how to change function on click
     https://stackoverflow.com/questions/67247841/can-i-create-up-to-5-different-actions-on-each-click-on-a-single-button-in-javas
@@ -200,3 +169,29 @@ Laura Walsh 2022
     error with play2- should not be dealing once over 19 but once you hit hold button and then computer hold every time click an alert message card gets dealt to computer even after computer hold- why??
 
     So I have clicked hold and click on computer holds alert- deals them a card so if should have won they dont. If computer holding and I continue to get cards then doesnt deal to computer. But if computer holding and I then click hold deals a final card to computer when computer hold alert pops up. 
+ 
+
+[Back to top](#contents)
+
+## Deployment
+
+The site was deployed using GitHub pages. This was performed by navigating to the settings page within the repository. The pages tab on the menu to the left of the screen was opened and the source drop-down menu was changed to main. This generated a link to the site after a few minutes. 
+
+[Back to top](#contents)
+
+## Credits
+
+The love maths project was used as a guide for setting the DOM content loaded function and the functions for keeping computer and player game score.
+
+Some comments from tutoring were also used to rectify issues with the display of the player and user score during the game play. 
+
+[Back to top](#contents)
+
+## Content
+Images were accessed from Pexels (https://www.pexels.com). 
+
+Icons for the play area were accessed at Font Awesome.
+
+Fonts were accessed from Google Fonts. 
+
+Laura Walsh 2022
