@@ -9,7 +9,7 @@ body {
 
 /* Heading */
 
-.logo {
+img {
     background-color: silver;
     height: 60px;
     width: 60px;
@@ -28,7 +28,7 @@ h1 {
     width: 33%;
     height: 300px;
     float: left;
-    padding: 30px 20px;
+    padding: 30px, 20px;
     border: 2px solid silver;
     box-sizing: border-box;
     background-color: rgba(255, 0, 0, 0.3);
@@ -56,13 +56,6 @@ h1 {
     background-color: silver;
 }
 
-/* media queries larger devices */
-
-@media screen and (max-width:1110px) {
-
-
-}
-
 /* media queries for tablet and larger phone screens */
 
 @media screen and (max-width:950px) {
@@ -71,6 +64,12 @@ h1 {
         padding-top: 20px;
         height: 220px;
     }
+
+    .btn {
+        height: 50px;
+        font-size: 20px;
+    }
+
 }
 
 /* media queries smaller devices */
@@ -83,16 +82,22 @@ h1 {
         height: auto;
     }
 
+    img {
+        height:30px;
+        width: 30px;
+    }
+
     .btn {
         height: 50px;
         font-size: 20px;
     }
 
     .cards>div {
-        padding-top: 20px;
-        height: 100px;
+        height: 120px;
         font-size: 20px;
     }
 
-
+    .cards {
+        padding: 10px;
+    }
 }

@@ -134,42 +134,13 @@ No errors were found when passing through the official Jshint validator
 ## Bugs
 Through the course of the project several issues were identified and recitified. 
 
-* Font awesome icons were not displaying initially, however it soon came to attention that the style link to this had an error within. 
+* One font awesome icon was not displaying initially, however it was an issue with it not being a free icon and a different icon chosen. 
 
-* An error within the practice section regarding an extra closing div element was making the link elements and breaks in this section display differently between the three sections. This was identified using the HTTP validator. 
+* Lighthouse performance was reduced due to no CSS height or width on logo image. CSS rule applied to logo class was changed to img instead. 
 
-* Lighthouse accessibilty was reduced due to inappropriate aria-label for main image. This was rectified using a role of image for the div element containing the image. 
+* There were several issues initially with functions being over-complicated and returning duplicate numbers for players. With testing using console.logs on dev tools, it was identified what functions were causing the issues and these were modified and retested to ensure they were working correctly. The playerHold, computerHold and gamePlay functions were in certain circumstances causing two numbers to be returned due to them being called in close succession. 
 
-* A white vertical stripe was displaying on the right side of my page across devices. This was rectified using Dev Tools to fix an overflow issue. 
-
-* An issue with the form settings on the contact page and linking this with the response page was identified. The action of the form was incorrect with 'push' being used in error rather than 'get'. Once rectified, this solved the issue. 
-
-* There were issues with displaying the timetable on smaller devices and readibilty. After discussion with my mentor, a div to contain a simplified version of the data for smaller screen was identified as a solution with the display alternating for media queries.
-
-* An issue with the image loading times reducing performance was identified on Lighthouse testing. Images were compressed using tinyPNG and birme.net and this has improved performance. 
-
-* Several aria-labels were initally missing for links and images. This was flagged after revisiting some of the HTML lessons. 
-
-
-
-
-JS hint errors??
-
-    how to change function on click
-    https://stackoverflow.com/questions/67247841/can-i-create-up-to-5-different-actions-on-each-click-on-a-single-button-in-javas
-
-    Generating non repeating random number
-    https://stackoverflow.com/questions/18806210/generating-non-repeating-random-numbers-in-js
-
-    https://www.google.com/search?q=creating+a+card+game+javascript&rlz=1C5CHFA_enIE970IE970&oq=creating+online+poker+game+javasc&aqs=chrome.1.69i57j0i22i30l2.12859j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_tY4LY8_KL4uTgAbF8KaoDA_18
-
-    why is text inner not pulling to html- returning global variable not returned value
-    issue with score originally had if((player1 > 21) || (player2 > player1), however did not realise this would include if computer over 21 so changed to if((player1 > 21) || ((player2 <21) +++ (player2 > player1)). 
-
-    error with play2- should not be dealing once over 19 but once you hit hold button and then computer hold every time click an alert message card gets dealt to computer even after computer hold- why??
-
-    So I have clicked hold and click on computer holds alert- deals them a card so if should have won they dont. If computer holding and I continue to get cards then doesnt deal to computer. But if computer holding and I then click hold deals a final card to computer when computer hold alert pops up. 
- 
+* There was an initial issue with displaying the player and computer score on the appropriate areas. After some research and discussion with tutoring it was discovered that the set inner text for these was returning the global variables not the returned value for player1 and player2. This was rectified. 
 
 [Back to top](#contents)
 

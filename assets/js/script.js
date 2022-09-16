@@ -42,7 +42,7 @@ function play2(){
 }
 
 /**
- * *Displays the number's dealt to player 1 
+ * *Displays the number's dealt to player 1 on the player area
  * If computer score is less than 17 continues to deal to computer otherwise triggers computerHold function*/
 
 function gamePlay(){
@@ -88,19 +88,15 @@ function playerHold(){
     console.log("playerHold func");
     if (player2>=17){
         endGame();}  
-    if (player2<=17) {play2();};
-        // endGame();   
-        //     do {play2();} while (player2<17)
-        // endGame();   
+    if (player2<17) {
+        play2();
+        alert('Computer Hits. Stay Holding?')};  
 }
 
 
-// If computer is over 17 stops giving cards but continues to deal to player if pressing Hit Me.
+// If computer is over 17 stops giving cards to computer but continues to deal to player if pressing Hit Me.
 function computerHold(){
-    let playerScore = play1();
-    if (player1 <= 21){
-        document.getElementsByClassName('player')[0].innerText = String(playerScore);}
-    else if (player1 > 22){
+    if (player1 >= 22){
         alert('You"ve gone too high');
         endGame();}}
 
