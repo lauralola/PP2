@@ -63,9 +63,9 @@ The computer area displays a '?' for most of the game as the player is unable to
 
 The play area contains three buttons with different functions. Firstly the reset button resets the game so player and computer are both back to '0'.
 
-The hit button, when selected, will deal a card to the player and the computer (if the computer score is below 19). 
+The hit button, when selected, will deal a card to the player and the computer (if the computer score is below 17). Once the computer score reaches 17 or above the computer will hold and will not be dealt more cards if the player continues to press hit. This is alerted to the user.
 
-The hold button, when selected by the player means no card is dealt to the player but the computer recieves cards if below 19. Once the computer score reaches 19 it will also display an alert that the computer holds and the game ends. The winner is then revealed.
+The hold button, when selected by the player means no card is dealt to the player but the computer recieves cards if below 17. Once the computer score reaches 17 it will also display an alert that the computer holds and the game ends. The winner is then revealed. 
 
 On larger screen sizes the buttons are displayed side by side horizontally but for smaller screen sizes they are stacked vertically for ease of use. 
 
@@ -73,7 +73,7 @@ On larger screen sizes the buttons are displayed side by side horizontally but f
 
 #### Player area
 
-The player area again is kept simple in design. It initially displays a '0' and each time the player selects hit and a card is dealt the total score for the player is displayed for them. This should help them decide if they want another card to add to this or to hold their score. Once the reset button is selected, this area returns to displaying a '0'. On smaller screen sizes the display and font reduce in size, however the overall look appears the same as on larger devices. 
+The player area again is kept simple in design. It initially displays '0' and each time the player selects hit and a card is dealt the total score for the player is displayed for them. This should help them decide if they want another card to add to this or to hold their score. Once the reset button is selected, this area returns to displaying a '0'. On smaller screen sizes the display and font reduce in size, however the overall look appears the same as on larger devices. 
 
 ![Player Area](./assets/images/readme-images/phone.png)
 
@@ -164,5 +164,7 @@ Images were accessed from Pexels (https://www.pexels.com).
 Icons for the play area were accessed at Font Awesome.
 
 Fonts were accessed from Google Fonts. 
+
+Favicon was generated using favicon.io
 
 Laura Walsh 2022
