@@ -90,7 +90,7 @@ function playerHold(){
         endGame();}  
     if (player2<17) {
         play2();
-        alert('Computer Hits. Stay Holding?')};  
+        alert('Computer Hits. Stay Holding?');}  
 }
 
 
