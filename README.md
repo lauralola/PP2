@@ -129,6 +129,8 @@ No errors were found when passing through the official (Jigsaw) validator
 JavaScript
 No errors were found when passing through the official Jshint validator
 
+![JavaScript testing](./assets/images/readme-images/jshint.png)
+
 [Back to top](#contents)
 
 ## Bugs
